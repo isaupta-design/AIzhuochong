@@ -1,0 +1,25 @@
+[package]
+name = "ai-desktop-pet"
+version = "2.0.0"
+description = "Privacy-aware AI desktop pet"
+edition = "2021"
+
+[lib]
+name = "ai_desktop_pet_lib"
+crate-type = ["cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-opener = "2"
+base64 = "0.22"
+image = "0.24"
+screenshots = "0.8"
+active-win-pos-rs = "0.9"
+keyring = { version = "3", features = ["windows-native"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "rustls-tls"] }
+windows-sys = { version = "0.59", features = ["Win32_Foundation", "Win32_Media_Audio", "Win32_UI_Input_KeyboardAndMouse", "Win32_System_LibraryLoader", "Win32_UI_WindowsAndMessaging"] }

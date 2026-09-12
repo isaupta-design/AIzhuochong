@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "AI 桌宠",
+  "version": "2.0.0",
+  "identifier": "com.aizhuochong.desktoppet",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "AI 桌宠",
+        "width": 380,
+        "height": 230,
+        "transparent": true,
+        "backgroundColor": "#00000000",
+        "decorations": false,
+        "alwaysOnTop": true,
+        "resizable": false
+      },
+      {
+        "label": "voice_overlay",
+        "title": "BT 通讯面板",
+        "url": "index.html?overlay=voice",
+        "width": 340,
+        "height": 190,
+        "transparent": true,
+        "backgroundColor": "#00000000",
+        "decorations": false,
+        "alwaysOnTop": true,
+        "resizable": false,
+        "visible": false,
+        "skipTaskbar": true
+      },
+      {
+        "label": "subtitle_overlay",
+        "title": "BT 字幕条",
+        "url": "index.html?overlay=subtitle",
+        "width": 1000,
+        "height": 120,
+        "transparent": true,
+        "backgroundColor": "#00000000",
+        "decorations": false,
+        "alwaysOnTop": true,
+        "resizable": false,
+        "visible": false,
+        "skipTaskbar": true
+      },
+      {
+        "label": "settings",
+        "title": "AI 桌宠设置中心",
+        "url": "index.html?overlay=settings",
+        "width": 940,
+        "height": 720,
+        "transparent": false,
+        "decorations": true,
+        "alwaysOnTop": false,
+        "resizable": true,
+        "visible": false
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": "nsis",
+    "icon": ["icons/icon.ico", "icons/icon.png"]
+  }
+}
